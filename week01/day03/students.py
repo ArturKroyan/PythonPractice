@@ -76,16 +76,19 @@ def create_report(students):
     return report
 
 
-print(create_report(students))
 
-print("\n=== СТУДЕНТЫ ГРУППЫ ИП-123 ===")
-for student in filter_by_group(students, "ИП-123"):
-    print(student["name"])
 
-print("\n=== СОРТИРОВКА ПО ВОЗРАСТУ ===")
-for student in sort_by_age(students):
-    print(f'{student["name"]}: {student["age"]}')
+if __name__ == "__main__":
+    print(create_report(students))
 
-print("\n=== СОРТИРОВКА ПО СРЕДНЕМУ БАЛЛУ ===")
-for student in sort_by_average_grade(students):
-    print(f'{student["name"]}: {average_grade(student):.2f}')
+    print("\n=== СТУДЕНТЫ ГРУППЫ ИП-123 ===")
+    for student in filter_by_group(students, "ИП-123"):
+        print(student["name"])
+
+    print("\n=== СОРТИРОВКА ПО ВОЗРАСТУ ===")
+    for student in sort_by_age(students):
+        print(f'{student["name"]}: {student["age"]}')
+
+    print("\n=== СОРТИРОВКА ПО СРЕДНЕМУ БАЛЛУ ===")
+    for student in sort_by_average_grade(students):
+        print(f'{student["name"]}: {average_grade(student):.2f}')
